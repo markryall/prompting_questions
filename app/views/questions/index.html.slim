@@ -8,6 +8,7 @@ div.hero-unit
 
 - @questions.each do |question|
   div.row
-    div.span4.offset2
-      h2 = question.title
-      p = question.description
+    a href="/questions/#{question.id}"
+      div.span4.offset2
+        h2 = question.title
+        p = question.description
