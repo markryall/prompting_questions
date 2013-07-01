@@ -1,5 +1,13 @@
-div.hero-unit
+div.row.hero-unit
+  div.span8.offset2
+    h1 = @question.title
+    p = @question.description
 
-  h1 = @question.title
-
-  p = @question.description
+div.row
+  div.span8.offset2
+    form method="post" action="/questions/#{@question.id}/answer"
+      input type="hidden" name="authenticity_token" value="#{form_authenticity_token}"
+      fieldset
+        textarea name="content" rows="20" style="width: 100%;" placeholder="type your answer here"
+      fieldset
+        button type="submit" class="btn" Submit

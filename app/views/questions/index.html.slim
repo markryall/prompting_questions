@@ -1,10 +1,16 @@
-div.hero-unit
+div.row.hero-unit
+  div.span8.offset2
+    h1 Prompting Questions
 
-  h1 Prompting Questions
+    p Here is where you anonymously express your opinion
 
-  p Here is where you anonymously express your opinion
+    p You can answer as many questions as you like.  Each question can be answered any number of times.
 
-  p You can answer as many questions as you like.  Each question can be answered any number of times.
+
+- flash.each do |name, message|
+  div.row
+    div.span4.offset4
+      p class="text-#{name}" = message
 
 - @questions.each do |question|
   div.row
