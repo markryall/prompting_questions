@@ -6,8 +6,9 @@ div.row.hero-unit
 div.row
   div.span8.offset2
     form method="post" action="/questions/#{@question.id}/answer"
+      input type="hidden" name="token" value="#{@token}"
       input type="hidden" name="authenticity_token" value="#{form_authenticity_token}"
       fieldset
-        textarea name="content" rows="20" style="width: 100%;" placeholder="type your answer here"
+        textarea name="content" rows="20" style="width: 100%;" placeholder="Type your story here"
       fieldset
         button type="submit" class="btn" Submit
