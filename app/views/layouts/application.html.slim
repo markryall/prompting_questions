@@ -7,7 +7,16 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = csrf_meta_tags
   body
+
+      div.hero-unit
+          div.container
+            div.row
+              div.span8.offset2
+                h1 Prompting Questions
+                p Here is where you anonymously express your opinion
+
     = yield
+
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js'
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js'
     = javascript_include_tag 'application'
