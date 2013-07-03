@@ -1,19 +1,24 @@
-div.row.hero-unit
-  div.span8.offset2
-    h1 Prompting Questions
-
-    p Here is where you anonymously express your opinion
-
-    p You can answer as many of these questions as you like with your own story.  Each question can be answered any number of times.
-
-- flash.each do |name, message|
-  div.row
-    div.span8.offset4
-      p class="text-#{name}" = message
-
-- @questions.each do |question|
-  div.row
-    a href="/questions/#{question.id}?token=#{@token}"
+div.hero-unit
+  div.container
+    div.row
       div.span8.offset2
-        h2 = question.title
-        p = question.description
+        h1 Prompting Questions
+        p Here is where you anonymously express your opinion
+
+div.container
+
+  div.row
+    div.span8.offset2
+      p.lead You can answer as many of these questions as you like with your own story.  Each question can be answered any number of times.
+
+  - flash.each do |name, message|
+    div.row
+      div.span8.offset2
+        p class="text-#{name}" = message
+
+  - @questions.each do |question|
+    div.row
+      a href="/questions/#{question.id}?token=#{@token}"
+        div.span8.offset2
+          blockquote
+            p = question.description
