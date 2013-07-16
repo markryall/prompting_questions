@@ -1,16 +1,16 @@
 desc 'dump data'
 task dump: :environment do
-  Answer.includes(:question).each do |a|
+  Answer.all.each do |answer|
     puts <<EOF
-Response #{a.id}
+Response #{answer.id}
 
 Question:
 
-#{a.question.description}
+#{answer.question.description}
 
 Answer:
 
-#{a.content}
+#{answer.content}
 ------------
 EOF
   end
